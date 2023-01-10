@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="warning">
+      Añadir Nueva Nota
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Título</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="warning" fill="outline" type="submit" [disabled]="!todo.valid">Submit</ion-button>
+  </form>
+
+  <ion-button expand="block" (click)="hazFoto()" color="warning">
+    <ion-icon name="camera" slot="end"></ion-icon> Fotografiar
+  </ion-button>
+  <ion-img id='file' #foto src=""></ion-img>
+  
+</ion-content>
+
+
