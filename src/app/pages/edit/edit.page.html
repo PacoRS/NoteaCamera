@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Nota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Título: </ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description:</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button shape="round" color="primary" fill="outline" type="submit" [disabled]="!todo.valid">Guardar</ion-button>
+    <ion-button expand="block" (click)="hazFoto()" color="warning">
+      <ion-icon name="camera" slot="end"></ion-icon> Fotografiar
+    </ion-button>
+    <ion-img id='file' #foto></ion-img>
+  </form>
+  
+</ion-content>
